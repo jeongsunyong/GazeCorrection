@@ -1,0 +1,415 @@
+extends layout
+
+block content
+  link(rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css' integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p' crossorigin='anonymous')
+  style(rel='stylesheet' type='text/css' media='screen').
+      @font-face { font-family: 'KCC'; src: url("/font/KCC은영체.ttf")}
+      @font-face { font-family: '행복고흥'; src: url("/font/행복고흥M.ttf")}
+              
+      .hexagon-wrapper {
+        margin: auto;
+        display: flex;
+        text-align: initial;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+      }
+
+      .hexagon {
+        position: relative;
+        width: 46%;
+        height: 80%;
+        margin: auto;
+        color: white;
+        background: linear-gradient(-180deg, white, #fda3b2);
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        transition: 0.5s;
+      }
+
+      .hexagon i {
+        z-index: 1;
+        margin: auto;
+        font-size: 30px;
+        color: transparent;
+        background: linear-gradient(45deg, #a58fe9, #e37682);
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+
+      .hexagon:before,
+      .hexagon:after {
+        position: absolute;
+        content: "";
+        background: inherit;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        transition: 0.5s;
+        transform-origin: center;
+      }
+      .hexagon:before {
+        transform: rotateZ(60deg);
+      }
+      .hexagon:after {
+        transform: rotateZ(-60deg);
+      }
+      .hexagon:hover {
+        border-radius: 50px;
+        transition: 0.5s;
+      }
+      .hexagon:hover:before {
+        border-radius: 50px;
+        transition: 0.5s;
+      }
+      .hexagon:hover:after {
+        border-radius: 50px;
+        transition: 0.5s;
+      }
+      .container-fluid {
+        padding-top: 20vh;
+      }
+
+      .slider {
+        width: 70vmin;
+        max-width: 20em;
+        cursor: pointer;
+      }
+
+      .slidebar{
+        height: 10vh;
+        margin-top: 2vmin;
+        text-align: center;
+      }
+
+      .title {
+        text-align:center;
+        text-transform: uppercase;
+        font-family: 'Amatic SC', cursive;
+        font-size: 20vmin;
+      }
+
+      .emoji {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .fmoon {
+        max-height: 10.1em;
+        max-width: 10.1em;
+        height: 50vmin;
+        width: 50vmin;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      .moon {
+        max-height: 10.3em;
+        max-width: 10.3em;
+        height: 50vmin;
+        width: 50vmin;
+        border-radius: 50%;
+        opacity: 0;
+        z-index: 2;
+      }
+
+      input[type=range] {
+        height: 31px;
+        -webkit-appearance: none;
+        margin: 10px 0;
+        width: 100%;
+      }
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 7px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 1px 1px 2px #000000;
+        background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+        border-radius: 50px;
+        border: 1px solid #333333;
+      }
+      input[type=range]::-webkit-slider-thumb {
+        box-shadow: 2px 2px 3px #000000;
+        border: 2px solid #fff;
+        height: 15px;
+        width: 15px;
+        border-radius: 100%;
+        background: #fff;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -5px;
+      }
+      input[type=range]::-webkit-slider-thumb:hover {
+        box-shadow: 5px 5px 5px #000000;
+        border: 2px solid #fff;
+        height: 15px;
+        width: 15px;
+        border-radius: 100%;
+        background: #fff;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -5px;
+      }
+      input[type=range]::-webkit-slider-thumb:active {
+        box-shadow: 2px 2px 3px #000000;
+        border: 2px solid rgba(200,200,200,1);
+        height: 15px;
+        width: 15px;
+        border-radius: 100%;
+        background: rgba(200,200,200,1);
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -5px;
+      }           
+      input[type=range]:focus::-webkit-slider-runnable-track {
+        background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      }
+      input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 7px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 1px 1px 2px #000000;
+        background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+        border-radius: 50px;
+        border: 1px solid #333333;
+      }
+      input[type=range]::-moz-range-thumb {
+        box-shadow: 1px 1px 2px #000000;
+        border: 0px solid #2497E3;
+        height: 24px;
+        width: 24px;
+        border-radius: 25px;
+        background: #333333;
+        cursor: pointer;
+      }
+      input[type=range]::track {
+        width: 100%;
+        height: 7px;
+        cursor: pointer;
+        animate: 0.2s;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      input[type=range]::fill-lower {
+        background: #FFFFB3;
+        border: 1px solid #333333;
+        border-radius: 100px;
+        box-shadow: 1px 1px 2px #000000;
+      }
+      input[type=range]::fill-upper {
+        background: #FFFFB3;
+        border: 1px solid #333333;
+        border-radius: 100px;
+        box-shadow: 1px 1px 2px #000000;
+      }
+      input[type=range]::thumb {
+        margin-top: 1px;
+        box-shadow: 1px 1px 2px #000000;
+        border: 0px solid #2497E3;
+        height: 24px;
+        width: 24px;
+        border-radius: 25px;
+        background: #333333;
+        cursor: pointer;
+      }
+  section.snow-bg
+  #wrapper
+    #userWrap
+      #menuList
+        //#menuHeader &#xBA54;&#xB274;
+        //- #loginBtn.button.menuBtn(style="font-family: '행복고흥'; font-size: 1.5em; margin-left: 30px;") LOGIN
+        //- #joinBtn.button.menuBtn(style="font-family: '행복고흥'; font-size: 1.5em; margin-left: 30px;") JOIN
+        #loginBtn
+          .hexagon-wrapper
+            .hexagon
+              i.fas.fa-pen
+        #joinBtn
+          .hexagon-wrapper
+            .hexagon
+               i.fas.fa-user-plus
+
+      form#loginForm(action='/login' method='post')
+        h1(style="font-family: '행복고흥'; font-size: 6.0em; margin-bottom: 20px; color: white;") LOGIN
+        p
+          input#loginId(style="font-family: 'KCC'; width:300px;", type='text', placeholder='id', autocomplete='off')
+        p
+          input#loginPw(style="font-family: 'KCC'; width:300px;", type='password', placeholder='password', autocomplete='off')
+        p
+          input.btn(style="font-family: 'KCC'; font-size: 1.0em; ", type='submit', value='로그인')
+          //input
+        //-   .hexagon-wrapper
+        //-      .hexagon
+        //-         i.fas.fa-pen(type='submit')
+      form#joinForm
+        h1(style="font-family: '행복고흥'; font-size: 6.0em; margin-bottom: 20px; color: white;") JOIN
+        p
+          input#joinId(style="font-family: 'KCC'; width:300px;", type='text', placeholder='id', autocomplete='off')
+        p
+          input#joinPw(style="font-family: 'KCC'; width:300px;", type='password', placeholder='password', autocomplete='off')
+        p
+          input.btn(style="font-family: 'KCC';font-size: 1.0em; ", type='submit', value='회원가입')
+        //-   .hexagon-wrapper
+        //-      .hexagon
+        //-         i.fas.fa-plus(type='submit')
+    #contentWrap
+      //#logoutBtn.button(style="font-family: 'KCC';", value='로그아웃')
+      #menuList
+        #logoutBtn(style="margin-bottom:20px;")
+            .hexagon-wrapper(style = "margin: 0 0 0 60px;")
+              .hexagon
+                i.fas.fa-sign-out-alt       
+        #memberWrap
+          #memberList
+            #memberHeader(style="font-family: 'KCC'; font-size: 1.7em; color: white;") 접속중인 사람
+            #memberSelect(style="font-family: '행복고흥'; color: white;")
+              //.memberEl test
+              //.memberEl test2
+      #loginForm
+        .col-12.emoji
+          img#fmoon.fmoon(src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/full-moon-with-face_1f31d.png')
+          img#moon.moon(src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/new-moon-with-face_1f31a.png')
+        .col-12.slidebar
+          input#slider.slider(type='range', min='0', max='1', value='0', step='0.01', oninput='sliderChange(this.value)')
+        h2(style="font-family: '행복고흥'; font-size: 2.6em; margin-bottom: 20px; color: white;") 시선교정 화상채팅 서비스 'EyeU'에 오신 것을 환영합니다.
+        br 
+        h2(style="font-family: '행복고흥'; font-size: 2.6em; margin-bottom: 20px; color: white;") 상대와 눈을 맞추며 대화해 보세요!
+
+      script(src='http://code.jquery.com/jquery-latest.min.js')
+      script(src='/socket.io/socket.io.js')
+      link(rel='stylesheet', href='/css/loginstyle.css')
+      script.
+          var socket = io.connect('http://localhost:8005/', {
+              path: '/socket.io'
+          });
+          var moon = document.getElementById('moon');
+
+          function sliderChange(val) {
+            moon.style.opacity = val;
+          }
+        $(function () {
+            var $userWrap = $('#userWrap');
+            var $contentWrap = $('#contentWrap');
+            var $loginForm = $('#loginForm');
+            var $joinForm = $('#joinForm');
+            var $chatForm = $('#chatForm');
+            var $roomSelect = $('#roomSelect');
+            var $memberSelect = $('#memberSelect');
+            var $chatLog = $('#chatLog');
+            var roomId = 1;
+            var socketId = "";
+
+            $("#loginBtn").click(function (e) {
+                e.preventDefault();
+                $loginForm.show();
+                $joinForm.hide();
+            });
+
+            $("#joinBtn").click(function (e) {
+                e.preventDefault();
+                $joinForm.show();
+                $loginForm.hide();
+            });
+            $("#logoutBtn").click(function (e) {
+                e.preventDefault();
+                socket.emit('logout');
+                socketId = "";
+                alert("로그아웃되었습니다.");
+                $userWrap.show();
+                $contentWrap.hide();
+            });
+
+            $roomSelect.on("click", "div", function () {
+                if (roomId !== $(this).data('id')) {
+                    roomId = $(this).data('id');
+                }
+                $(this).parents().children().removeClass("active");
+                $(this).addClass("active");
+                $chatLog.html("");
+                $('#chatHeader').html(`${$(this).html()}`);
+                socket.emit('join room', {
+                    roomId
+                });
+            });
+
+            socket.on('userlist', function (data) {
+                let html = "";
+                data.forEach((el) => {
+                    if (el.socketId === socketId) {
+                        html += `<div class="memberEl">${el.name} (me)</div>`
+                    } else {
+                        html += `<div class="memberEl">${el.name}</div>`
+                    }
+                });
+                $memberSelect.html(html);
+            });
+
+            socket.on('lefted room', function (data) {
+                $chatLog.append(`<div class="notice"><strong>${data}</strong> lefted the room</div>`)
+            });
+            socket.on('joined room', function (data) {
+                $chatLog.append(`<div class="notice"><strong>${data}</strong> joined the room</div>`)
+            });
+
+            $loginForm.submit(function (e) {
+                e.preventDefault();
+                let id = $("#loginId");
+                let pw = $("#loginPw");
+                if (id.val() === "" || pw.val() === "") {
+                    alert("check validation");
+                    return false;
+                } else {
+                    socket.emit('login user', {
+                        id: id.val(),
+                        pw: pw.val()
+                    }, function (res) {
+                        if (res.result) {
+                            alert(res.data);
+                            socketId = socket.id;
+                            roomId = 1;
+                            id.val("");
+                            pw.val("");
+                            $userWrap.hide();
+                            $contentWrap.show();
+                            $('#chatHeader').html("Everyone");
+                        } else {
+                            alert(res.data);
+                            id.val("");
+                            pw.val("");
+                            $("#joinBtn").click();
+                        }
+                    });
+                }
+            });
+
+            $joinForm.submit(function (e) {
+                e.preventDefault();
+                let id = $("#joinId");
+                let pw = $("#joinPw");
+                if (id.val() === "" || pw.val() === "") {
+                    alert("check validation");
+                    return false;
+                } else {
+                    socket.emit('join user', {
+                        id: id.val(),
+                        pw: pw.val()
+                    }, function (res) {
+                        if (res.result) {
+                            alert(res.data);
+                            id.val("");
+                            pw.val("");
+                            $("#loginBtn").click();
+                        } else {
+                            alert(res.data);
+                            return false;
+                        }
+                    });
+                }
+            });
+
+        });

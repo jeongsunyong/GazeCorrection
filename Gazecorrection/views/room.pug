@@ -1,0 +1,88 @@
+extends layout
+
+block content
+  section.snow-bg
+  fieldset
+    link(rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css' integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p' crossorigin='anonymous')
+    style(rel='stylesheet' type='text/css' media='screen').
+      @font-face { font-family: '행복고흥'; src: url("/font/행복고흥M.ttf")}
+      @font-face { font-family: 'KCC'; src: url("/font/KCC은영체.ttf")}
+      legend {
+      font-size:  3.5em;
+      position:  relative;
+      top:  -.4em;
+      color: #fff;
+      text-align: center;
+      }
+        
+      .hexagon-wrapper {
+        margin: auto;
+        display: flex;
+        text-align: initial;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+      }
+
+      .hexagon {
+        position: relative;
+        width: 46%;
+        height: 80%;
+        margin: auto;
+        color: white;
+        background: linear-gradient(-180deg, white, #fda3b2);
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        transition: 0.5s;
+      }
+
+      .hexagon i {
+        z-index: 1;
+        margin: auto;
+        font-size: 30px;
+        color: transparent;
+        background: linear-gradient(45deg, #a58fe9, #e37682);
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+
+      .hexagon:before,
+      .hexagon:after {
+        position: absolute;
+        content: "";
+        background: inherit;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        transition: 0.5s;
+        transform-origin: center;
+      }
+      .hexagon:before {
+        transform: rotateZ(60deg);
+      }
+      .hexagon:after {
+        transform: rotateZ(-60deg);
+      }
+      .hexagon:hover {
+        border-radius: 50px;
+        transition: 0.5s;
+      }
+      .hexagon:hover:before {
+        border-radius: 50px;
+        transition: 0.5s;
+      }
+      .hexagon:hover:after {
+        border-radius: 50px;
+        transition: 0.5s;
+      }
+
+    legend(style="font-family: '행복고흥'; font-size: 5.0em;") Create Chat Room
+    form(action='/room' method='post' style="margin: 0 auto; width:300px;")
+      div: input(name='title' style = "font-family: 'KCC'; font-size:1.7em; margin-left: 30px;" placeholder='  방 이름')
+      div: input(name='max' type='number' style = "font-family: 'KCC'; font-size:1.7em; margin-left: 30px;" placeholder='  수용 인원(최소 2명)' min='2' value='2')
+      div: input(name='password' type='password' style = "font-family: 'KCC'; font-size:1.7em; margin-left: 30px;" placeholder='  P/W(없으면 공개방)')
+      div(style="text-align:center;"): button(type='submit' style = "font-size:1.5em;font-family: 'KCC'!important;") 생성
+      //- .hexagon-wrapper
+      //-   .hexagon
+      //-     i.fas.fa-plus(type='submit')

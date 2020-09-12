@@ -1,0 +1,269 @@
+doctype html
+head
+  meta(charset='utf-8')
+
+
+  meta(http-equiv='content-type' content='text/html; charset=utf-8')
+  meta(name='description' content='')
+  meta(name='keywords' content='')
+
+
+  title= title
+  link(rel='stylesheet' href='/css/bootstrap.min.css')
+  link(rel='stylesheet' href='/main.css')
+  link(rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css' integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p' crossorigin='anonymous')
+  link(href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css')
+fieldset
+  style(rel='stylesheet' type='text/css' media='screen').
+   @font-face { font-family: 'KCC'; src: url("/font/KCC은영체.ttf")}
+   @font-face { font-family: '행복고흥'; src: url("/font/행복고흥M.ttf")}
+   @font-face { font-family: 'LeagueScript'; src: url("/font/RougeScript-Regular.ttf")}
+    legend {
+    color: #fff;
+    font-family: '행복고흥';
+    font-size:  2.2em;
+    position:  relative;
+    top:  -.4em;
+    }
+    #header
+    {
+      padding: 10em 0 6em 0;
+    }
+    body {
+      background-color: rgba(0,0, 0, 0.95);
+      font-family: 'UhBeemysen' !important;
+    }
+
+    .snow-bg {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      background-image: url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png');
+        animation: snow 10s linear infinite;
+    }
+
+    .hexagon-wrapper {
+      margin: auto;
+      display: flex;
+      text-align: initial;
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .hexagon {
+      position: relative;
+      width: 46%;
+      height: 80%;
+      margin: auto;
+      color: white;
+      background: linear-gradient(-180deg, white, #fda3b2);
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      transition: 0.5s;
+    }
+
+    .hexagon i {
+      z-index: 1;
+      margin: auto;
+      font-size: 30px;
+      color: transparent;
+      background: linear-gradient(45deg, #a58fe9, #e37682);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hexagon:before,
+    .hexagon:after {
+      position: absolute;
+      content: "";
+      background: inherit;
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
+      transition: 0.5s;
+      transform-origin: center;
+    }
+    .hexagon:before {
+      transform: rotateZ(60deg);
+    }
+    .hexagon:after {
+      transform: rotateZ(-60deg);
+    }
+    .hexagon:hover {
+      border-radius: 50px;
+      transition: 0.5s;
+    }
+    .hexagon:hover:before {
+      border-radius: 50px;
+      transition: 0.5s;
+    }
+    .hexagon:hover:after {
+      border-radius: 50px;
+      transition: 0.5s;
+    }
+
+    @keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+    100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+    }
+
+    @media (max-width: 768px) {
+        .woocommerce ul.products li.product, 
+        .woocommerce-page ul.products li.product, 
+        .woocommerce-page[class*=columns-] ul.products li.product,
+        .woocommerce[class*=columns-] ul.products li.product {
+            width: 100%;
+            float: left;
+            clear: both;
+            margin: 0 7em;
+        }
+    }
+
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+  script(src='/js/skel.min.js')
+  script(src='/js/skel-panels.min.js')
+  script(src='/js/init.js')
+  noscript
+    link(rel='stylesheet' href='/css/bootstrap.css')
+    link(rel='stylesheet' href='/css/skel-noscript.css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/style-desktop.css')
+
+
+#header
+  #nav-wrapper
+    nav.navbar.navbar-light.bg-light(style='background-color: rgba(255,255, 255, 0.3) !important; padding-bottom: 0.0rem; margin-top: 10px;')
+      a(href='/' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 3.0em; margin-top: 10px; margin-left: 50px;")  EyeU
+      //- button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarColor03' aria-controls='navbarColor02' aria-expanded='false' aria-label='Toggle navigation')
+      //-   span.navbar-toggler-icon
+      a(href='/room' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 2.5em; margin-left: 50px; margin-top: 10px;") CreateChatRoom
+      a(href='/setting' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 2.5em; margin-left: 10px; margin-top: 10px;") Setting
+      a(href='/login' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 2.5em; margin-left: 10px; margin-top: 10px;  margin-right: 50px;") User
+      //- #navbarColor02.collapse.navbar-collapse
+      //-   ul.navbar-nav.mr-auto
+      //-     li.nav-item
+      //-       a.nav-link(href='/room' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 2.5em; margin-left: 50px; margin-top: 10px;") CreateChatRoom
+      //-     li.nav-item
+      //-       a.nav-link(href='/setting' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 2.5em; margin-left: 10px; margin-top: 10px;") Setting
+      //-     li.nav-item
+      //-       a.nav-link(href='/login' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 2.5em; margin-left: 10px; margin-top: 10px;") User
+      //-   form.form-inline.my-2.my-lg-0
+  section.snow-bg
+  .container
+    // Logo
+    #logo
+      h1
+        a(class="display-3" href='/' style="font-family: '행복고흥'; font-size: 10.0em; margin-top: 50px;") EyeU
+      span.tag(style="font-family: '행복고흥'; font-size: 3.0em;") Gaze Correction
+// Featured
+
+#main
+  #content.container
+    section
+      header
+    
+      body
+        legend 채팅방 목록
+          table.table.table-hover(style="margin-top: 15px;")
+            thead
+              tr
+                th(scope='col') 방 이름
+                th(scope='col') 종류
+                th(scope='col') 허용 인원
+                th(scope='col') 방장
+                th(scope='col') 입장
+            tbody
+              for room in rooms
+                tr(data-id=room._id)
+                  td= room.title
+                  td= room.password ? '비밀방' : '공개방'
+                  td= room.max
+                  td= '유진'
+                  -var password = room.password ? 'true' : 'false';
+                  td: button(data-password=password data-id=room._id style = "font-family: '행복고흥'; font-size:  0.7em;").join-btn 입장
+
+        .error-message= error
+          .hexagon-wrapper
+            .hexagon
+              i.fas.fa-plus(type='button' onclick="location.href='/room'")
+
+          //button.btn.btn-danger(type='button' onclick="location.href='/room'" style="font-family: 'KCC'; font-size: 2.0em;") 채팅방 생성
+          
+
+#tweet
+  .container
+    section
+      blockquote.navbar-brand(style="font-family: '행복고흥'; font-size: 2.8em; color: rgba(255,255, 255,0.7);")
+        | &ldquo; The Moonlight Sonata opens the gates to Paradise.&rdquo;
+
+  audio#myAudio(autoplay='' loop='')
+    source(src='도원경.mp3' type='audio/mp3')
+  
+#footer
+  .container
+    section
+      header
+        h2(style="font-family: '행복고흥'; font-size: 4.0em;") Get in touch
+        span.byline(style="font-family: '행복고흥'; font-size: 2.0em;  margin-top: 30px; color: rgba(255,255,255,.5)") 정선용 sunyong0321@naver.com
+        span.byline(style="font-family: '행복고흥'; font-size: 2.0em; color: rgba(255,255,255,.5)") 김정기 jg9502@naver.com
+        span.byline(style="font-family: '행복고흥'; font-size: 2.0em; color: rgba(255,255,255,.5)") 김효정 khj6165@gmail.com
+        span.byline(style="font-family: '행복고흥'; font-size: 2.0em; color: rgba(255,255,255,.5)") 하유진 hamonica98@naver.com 
+        script(src='/socket.io/socket.io.js')
+        script.
+          var socket = io.connect('http://localhost:8005/room', {
+            path: '/socket.io'
+          });
+
+          socket.on('newRoom', function (data) {
+            var tr = document.createElement('tr');
+            var td = document.createElement('td');
+            td.textContent = data.title;
+            tr.appendChild(td);
+            td = document.createElement('td');
+            td.textContent = data.password ? '비밀방' : '공개방';
+            tr.appendChild(td);
+            td = document.createElement('td');
+            td.textContent = data.max;
+            tr.appendChild(td);
+            td = document.createElement('td');
+            td.style.color = '유진';
+            td.textContent = '유진';
+            tr.appendChild(td);
+            td = document.createElement('td');
+            var button = document.createElement('button');
+            button.textContent = '입장';
+            button.dataset.password = data.password ? 'true' : 'false';
+            button.dataset.id = data._id;
+            button.addEventListener('click', addBtnEvent);
+            td.appendChild(button);
+            tr.appendChild(td);
+            tr.dataset.id = data._id;
+            document.querySelector('table tbody').appendChild(tr);
+          });
+          socket.on('removeRoom', function (data) {
+            document.querySelectorAll('tbody tr').forEach(function (tr) {
+              if (tr.dataset.id === data) {
+                tr.parentNode.removeChild(tr);
+              }
+            });
+          });
+          function addBtnEvent(e) {
+            if (e.target.dataset.password === 'true') {
+              const password = prompt('비밀번호를 입력하세요');
+              location.href = '/room/' + e.target.dataset.id + '?password=' + password;
+            } else {
+              location.href = '/room/' + e.target.dataset.id;
+            }
+          }
+          document.querySelectorAll('.join-btn').forEach(function (btn) {
+            btn.addEventListener('click', addBtnEvent);
+          });

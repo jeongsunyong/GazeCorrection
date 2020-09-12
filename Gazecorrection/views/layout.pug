@@ -1,0 +1,108 @@
+doctype html
+head
+  meta(charset='utf-8')
+
+
+  meta(http-equiv='content-type' content='text/html; charset=utf-8')
+  meta(name='description' content='')
+  meta(name='keywords' content='')
+
+
+  title= title
+  link(rel='stylesheet' href='/css/bootstrap.min.css')
+  link(rel='stylesheet' href='/main.css')
+  
+  link(href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css')
+
+  style(rel='stylesheet' type='text/css' media='screen').
+   @font-face { font-family: 'KCC'; src: url("/font/KCC은영체.ttf")}
+   @font-face { font-family: '행복고흥'; src: url("/font/행복고흥M.ttf")}
+   @font-face { font-family: 'LeagueScript'; src: url("/font/RougeScript-Regular.ttf")}
+    legend {
+    color: #fff;
+    font-family: '행복고흥';
+    font-size:  2.2em;
+    position:  relative;
+    top:  -.4em;
+    }
+    body {
+      background-color: rgba(0,0, 0, 0.95);
+      font-family: "Cabin Sketch", cursive !important;
+      font-weight: normal;
+      text-decoration: none;
+    }
+
+    .snow-bg {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      background-image: url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png');
+        animation: snow 10s linear infinite;
+    }
+
+    @keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+    100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+    }
+
+    @media (max-width: 768px) {
+        .woocommerce ul.products li.product, 
+        .woocommerce-page ul.products li.product, 
+        .woocommerce-page[class*=columns-] ul.products li.product,
+        .woocommerce[class*=columns-] ul.products li.product {
+            width: 100%;
+            float: left;
+            clear: both;
+            margin: 0 7em;
+        }
+    }
+
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+  script(src='/js/skel.min.js')
+  //script(src='/js/skel-panels.min.js')
+  script(src='/js/init.js')
+  noscript
+    link(rel='stylesheet' href='/css/bootstrap.css')
+    link(rel='stylesheet' href='/css/skel-noscript.css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/style-desktop.css')
+
+
+#header
+  #nav-wrapper
+   nav.navbar.navbar-light.bg-light(style='background-color: rgba(255,255, 255, 0.3) !important; padding-bottom: 0.0rem; margin-top: 10px;')
+      a(href='/' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 3.0em; margin-top: 10px; margin-left: 50px;")  EyeU
+      a(href='/room' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 2.5em; margin-left: 50px; margin-top: 10px;") CreateChatRoom
+      a(href='/setting' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 2.5em; margin-left: 10px; margin-top: 10px;") Setting
+      a(href='/login' style="font-family: '행복고흥'; color: rgba(255,255, 255,1) !important; font-size: 2.5em; margin-left: 10px; margin-top: 10px;  margin-right: 50px;") User
+
+#main
+  #content.container
+    section
+      header
+    
+      body
+        block content    
+
+#tweet
+  .container
+    section
+      blockquote.navbar-brand(style="font-family: '행복고흥'; font-size: 2.8em; color: rgba(255,255, 255,0.7);")
+        | &ldquo; The Moonlight Sonata opens the gates to Paradise.&rdquo;
+
+#footer
+  .container
+    section
+      header
+        h2(style="font-family: '행복고흥'; font-size: 3.0em;") Get in touch
+        span.byline(style="font-family: '행복고흥'; font-size: 2.0em;  margin-top: 30px; color: rgba(255,255,255,.5)") 정선용 sunyong0321@naver.com
+        span.byline(style="font-family: '행복고흥'; font-size: 2.0em; color: rgba(255,255,255,.5)") 김정기 jg9502@naver.com
+        span.byline(style="font-family: '행복고흥'; font-size: 2.0em; color: rgba(255,255,255,.5)") 김효정 khj6165@gmail.com
+        span.byline(style="font-family: '행복고흥'; font-size: 2.0em; color: rgba(255,255,255,.5)") 하유진 hamonica98@naver.com 
